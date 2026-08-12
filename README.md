@@ -1,5 +1,5 @@
-此為知足天藍圖。知足天，人間天堂世界。本藍圖展示人間天堂之系統架構。
-如對此藍圖志同道合，請移步至技術實現倉庫，一同將藍圖實現：https://github.com/naturaone/Tusita-Implementation
+知足天，人間天堂世界。本倉庫展示知足天系統藍圖。
+對此藍圖志同道合，請移步至技術實現倉庫，一同將藍圖實現：https://github.com/naturaone/Tusita-Implementation
 
 ## 授權聲明
 
