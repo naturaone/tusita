@@ -1,4 +1,5 @@
 知足天，人間天堂世界。本倉庫展示知足天之系統藍圖。
+
 知足天落實準則，參見：https://github.com/naturaone/paramita
 
 ## 授權聲明
@@ -26,6 +27,14 @@ Tusita Realization Guidelines, see:(https://github.com/naturaone/paramita).
 ##  License
 
 All content in this repository (including but not limited to: philosophical articles, design layouts, and Logo) is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)**.
+
+- Free Sharing: Attribution to "Baitouweng" is required.
+
+- NonCommercial & NoDerivatives: Commercial use and modification are prohibited.
+
+- Common Heritage of All: All implementation must be non-profit, open, and for the public good.
+
+- Irrevocable: This license is irrevocable; any violation will result in immediate termination of rights.
 
 For details:
 -  [LICENSE](./LICENSE) (Legal Code)
