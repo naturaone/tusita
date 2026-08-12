@@ -7,7 +7,7 @@
 
 詳細授權條款，參見：
 -  [LICENSE](./LICENSE)（法律原文）
--  [授權條款頁面](https://tusita.one/license.html)
+-  [授權條款](https://tusita.one/license.html)
 
 -------
 
