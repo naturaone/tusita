@@ -416,10 +416,18 @@
                         container.appendChild(h3);
                     }
                     else {
-                        const p = document.createElement('p');
-                        p.textContent = trimmed;
-                        container.appendChild(p);
-                    }
+    const p = document.createElement('p');
+    if (trimmed.startsWith('●')) {
+        const bullet = document.createElement('span');
+        bullet.textContent = '●';
+        bullet.style.cssText = 'font-size: 0.6em; margin-right: 0.3em;';
+        p.appendChild(bullet);
+        p.appendChild(document.createTextNode(trimmed.substring(1)));
+    } else {
+        p.textContent = trimmed;
+    }
+    container.appendChild(p);
+}
                 });
             })
             .catch(error => {
