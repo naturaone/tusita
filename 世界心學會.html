@@ -17,9 +17,6 @@
         body {
             background-color: #f0ead8;
             color: #584267;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             position: relative;
         }
 
@@ -88,12 +85,12 @@
         }
 
         .menu-body {
-            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            height: calc(100vh - 90px);
         }
 
         .bg-logo {
@@ -101,10 +98,10 @@
             top: 48%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 72vmin;
-            height: 72vmin;
-            max-width: 1260px;
-            max-height: 1260px;
+            width: 110vmin;
+            height: 110vmin;
+            max-width: 1600px;
+            max-height: 1600px;
             object-fit: contain;
             pointer-events: none;
             z-index: 0;
@@ -153,8 +150,8 @@
                 letter-spacing: 10px;
             }
             .bg-logo {
-                width: 65vmin;
-                height: 65vmin;
+                width: 100vmin;
+                height: 100vmin;
             }
             .header-logo {
                 width: 44px;
@@ -163,6 +160,9 @@
             .header-title {
                 font-size: 0.9rem;
                 letter-spacing: 3px;
+            }
+            .menu-body {
+                height: calc(100vh - 80px);
             }
         }
     </style>
