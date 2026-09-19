@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>知足天律 · 世界心學會</title>
+    <title>知足天律 · 世界民生中心</title>
     <style>
         * {
             margin: 0;
@@ -116,6 +116,113 @@
             text-align: justify;
         }
 
+        .work-info {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .work-info p {
+            font-size: 1rem;
+            color: #584267;
+            letter-spacing: 3px;
+            line-height: 2.2;
+            margin-bottom: 0;
+        }
+
+        .license-box {
+            margin: 0 auto;
+            padding: 30px 25px;
+            background: rgba(88, 66, 103, 0.08);
+            border: 1px solid rgba(88, 66, 103, 0.2);
+            text-align: center;
+            max-width: 420px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .license-title {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #584267;
+            margin-bottom: 18px;
+        }
+
+        .license-text {
+            font-size: 0.9rem;
+            line-height: 2.6;
+            color: #6b5580;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .agree-section {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .agree-section input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #584267;
+            cursor: pointer;
+        }
+
+        .agree-section label {
+            font-size: 0.85rem;
+            color: #584267;
+            letter-spacing: 1px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* 下載區塊 */
+        .download-section {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .download-item {
+            display: block;
+            width: 100%;
+            max-width: 420px;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #584267;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid rgba(88, 66, 103, 0.4);
+            background: transparent;
+            cursor: default;
+            transition: all 0.5s ease;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .download-item.active {
+            opacity: 1;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .download-item.active:hover {
+            background: rgba(88, 66, 103, 0.1);
+        }
+
         .back-section {
             text-align: center;
             padding: 10px 20px 20px;
@@ -215,7 +322,7 @@
 <body>
 
     <header class="site-header">
-        <a href="世界心學會.html" class="header-back">← 返回</a>
+        <a href="世界民生中心.html" class="header-back">← 返回</a>
         <img class="header-logo" src="Tusita.png" alt="Tusita">
         <a href="知足天.html" class="header-home">首頁</a>
     </header>
@@ -229,14 +336,38 @@
         <p>載入中……</p>
     </div>
 
+    <div class="work-info">
+        <p>導覽</p>
+    </div>
+
+    <div class="license-box">
+        <p class="license-text">
+            本清單為知足天居民手冊<br>
+            不定期更新<br>
+            僅供內部<br>
+            保留所有權利
+        </p>
+    </div>
+
+    <div class="article-content" style="padding-top: 0;">
+        <div class="agree-section">
+            <input type="checkbox" id="agreeCheckbox" onchange="toggleDownload()">
+            <label for="agreeCheckbox">我已閱讀並同意以上版權條款</label>
+        </div>
+
+        <div class="download-section" id="downloadSection">
+            <a href="大同世界建造指南.pdf" download class="download-item">大同世界建造指南</a>
+        </div>
+    </div>
+
     <div class="back-section">
-        <a href="世界心學會.html" class="back-link">← 返回</a>
+        <a href="世界民生中心.html" class="back-link">← 返回</a>
         <a href="知足天.html" class="back-link">首頁</a>
     </div>
 
     <footer class="block-four">
-    <p class="copyright">© 2023-2026 白頭翁 · <a href="license.html" style="color: #c5bbd4; text-decoration: none;">授權條款</a></p>
-</footer>
+        <p class="copyright">© 2023-2026 白頭翁 · <a href="license.html" style="color: #c5bbd4; text-decoration: none;">授權條款</a></p>
+    </footer>
 
     <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <span></span>
@@ -286,6 +417,28 @@
                     '<p>文章載入失敗，請稍後再試。</p>';
                 console.error(error);
             });
+
+        function toggleDownload() {
+            const checkbox = document.getElementById('agreeCheckbox');
+            const items = document.querySelectorAll('.download-item');
+            items.forEach(item => {
+                if (checkbox.checked) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        document.querySelectorAll('.download-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                const checkbox = document.getElementById('agreeCheckbox');
+                if (!checkbox.checked) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
 
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
